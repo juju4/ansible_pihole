@@ -79,6 +79,8 @@
 
 - name: 'Install | install'
   ansible.builtin.command: '/tmp/pihole-install.sh --unattended'
+  environment:
+    DEBIAN_FRONTEND: noninteractive
   when: not pihole_installed
 
 - name: 'Install | set FTL config'
